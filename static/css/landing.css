@@ -1,0 +1,186 @@
+/* ------------------------------------------------------------------ */
+/* Landing page — hero section + video modal                           */
+/* Loaded after style.css, so these rules override the base hero.      */
+/* ------------------------------------------------------------------ */
+
+.hero {
+    display: block;
+    max-width: 640px;
+    padding: 2.5rem 1.25rem 4rem;
+    text-align: center;
+}
+
+.hero-inner { display: flex; flex-direction: column; align-items: center; }
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    background: #ecf8f1;
+    border: 1px solid #bfe6d0;
+    color: #2f7d57;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+}
+
+.hero-title {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 8vw, 3.5rem);
+    line-height: 1.12;
+    letter-spacing: 0;
+    color: #1b2340;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title em {
+    font-style: normal;
+    color: #1aa88a;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #6b7280;
+    max-width: 440px;
+    margin: 0 auto 2.25rem;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #111827;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 2rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.hero-btn:hover { background: #1f2937; }
+
+/* Dashboard mock */
+
+/* style.css hides .hero-visual below 900px; the new design shows it at all widths */
+.hero-visual { display: block; margin-top: 3rem; }
+
+.hero-dash {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 1.5rem 1.5rem 1.75rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.hero-dash-dots { display: flex; gap: 0; margin-bottom: 1.25rem; }
+.hero-dash-dots span { width: 13px; height: 13px; border-radius: 50%; }
+.dot-red { background: #ff5f57; }
+.dot-yellow { background: #febc2e; }
+.dot-green { background: #28c840; }
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1rem 1.15rem 1.1rem;
+}
+
+.hero-stat-label { font-size: 0.75rem; color: #9ca3af; }
+.hero-stat-value { font-size: 1.7rem; font-weight: 800; color: #111827; line-height: 1.2; }
+.hero-stat-note { font-size: 0.8rem; }
+.note-up { color: #ef4444; }
+.note-good { color: #10b981; }
+.note-muted { color: #9ca3af; }
+
+.hero-cats { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.15rem; }
+
+.hero-cat-row {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    gap: 0;
+    font-size: 0.85rem;
+    color: #374151;
+}
+
+.hero-cat-track { height: 8px; background: #e5e7eb; border-radius: 999px; overflow: hidden; }
+.hero-cat-fill { height: 100%; border-radius: 999px; }
+.fill-food { width: 78%; background: #f59e0b; }
+.fill-travel { width: 52%; background: #3b82f6; }
+.fill-bills { width: 38%; background: #8b5cf6; }
+
+/* Video modal */
+
+.video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.video-modal[hidden] { display: none; }
+
+.video-modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+}
+
+.video-modal-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-modal-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
